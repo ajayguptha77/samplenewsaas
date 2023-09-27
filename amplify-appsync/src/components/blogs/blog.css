@@ -1,0 +1,81 @@
+/* Blog.css */
+
+.App {
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin: 20px 0;
+}
+
+button {
+  margin: 5px;
+  padding: 5px 10px;
+  font-size: 16px;
+}
+
+h2 {
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+li {
+  margin-bottom: 10px;
+  padding: 10px;
+  /* border: 1px solid #ccc; */
+}
+
+
+
+
+.blog-container {
+text-align: center;
+}
+
+.blog-button {
+margin: 5px;
+padding: 5px 10px;
+font-size: 16px;
+}
+
+.blog-list {
+list-style: none;
+padding: 0;
+text-align: center;
+}
+
+.blog-item {
+margin-bottom: 20px;
+padding: 20px;
+border: 1px solid #ccc;
+}
+
+.blog-title {
+font-size: 20px;
+}
+
+.blog-content {
+font-size: 16px;
+}
+
+
+.blog-button.active {
+background-color: #007bff;
+color: #fff;
+border: 1px solid #007bff;
+}
+/* Style for the inactive buttons */
+.blog-button {
+background-color: #fff;
+color: #007bff;
+border: 1px solid #007bff;
+margin: 5px;
+padding: 5px 10px;
+cursor: pointer;
+}
