@@ -1,0 +1,347 @@
+# This "input" configures a global authorization rule to enable public access to
+# all models in this schema. Learn more about authorization rules here: https://docs.amplify.aws/cli/graphql/authorization-rules
+input AMPLIFY { globalAuthRule: AuthRule = { allow: public } } # FOR TESTING ONLY!
+
+
+type myTable3 @model {
+  id: ID!
+  name: String!
+  description: String
+}
+
+type sample123 @model {
+  id: ID!
+  name: String!
+  description: String
+}
+
+type QuestionBankDetails @model {
+  id: ID!
+  name : String!
+  code: String! 
+  description: String!
+  adminID: ID
+  visibility: String!
+  department: ID!
+  Groups: [String]!
+  userID: ID!
+  status: Int!
+}
+
+type Questions @model {
+  id: ID!
+  questionBankID: ID!
+  questionType : String!
+  questionSubType: String!
+  subject: String!
+  difficulty: String!
+  topic: ID!
+  directions: String
+  codeEditor: String
+  textEditor: String
+  options: [option]!
+  solution: [solution]!
+  hint: [hint]!
+  groups: [String]
+  media: String!
+  questionName: String
+  wordLimit: Int
+  internalKeywords: [String]
+  externalKeywords: [String]
+  videoSolution: String
+  competency: [competency]
+  subTopic: String
+  concepts: String
+  adminID: ID!
+  userID: ID!
+  blanksCount: Int
+  caseSensitive: Boolean
+  QuesDependency: String
+  fillUpanswer: [answer]
+  languages: [ID]
+  SingleLanguage: String
+  inputFormat: String
+  outputFormat: String
+  enableCustomInput: Boolean
+  enableAPITesting: Boolean
+  codeConstraints: String
+  evaluationTime: Boolean
+  timeLimit: String
+  memoryLimit: String
+  outputLimit: String
+  codeSize: String
+  sample: [solution]
+  backgroundImg: String
+  initialQuery: String
+  fileCount: Int
+  fileCountMandatory: Boolean
+  fileFormats: [String]
+  enableAutoRecord: Boolean
+  minRecording: Int
+  maxRecording: Int
+  attemptsToRecord: Int
+  autoEvaluation: Boolean
+  cloudProvider: String
+  startTime: Int
+  ZipFile: String
+  themes: [String]
+  fileSizes: [String]
+  techStack: ID, 
+  instanceSize: ID
+}
+
+type hint {
+  optionNumber: Int
+  hint: String
+}
+
+type option {
+  isPartialCorrect: Boolean!
+  correctAnswer: Boolean!
+  optionNumber: Int
+  weightage: Int!
+  answer: String!
+  negMarks: Int
+  splitMarksEqually: String
+  fullMarksIfAnyCorrect: String
+  fullMarksOnlyIfAllCorrect: String
+}
+
+type answer{
+  splitMarksEqually: String
+  weightage: Int
+  answer: String
+  alternateAns: [String]
+}
+
+type solution {
+  answer: String!
+  optionNumber: Int
+  bestSolution: Boolean!
+}
+
+type ContentBankDetails @model {
+  id: ID!
+  name : String!
+  description: String!
+  adminID: ID!
+  visibility: String!
+  department: ID!
+  Groups: [String]!
+  userID: ID!
+  status: Int!
+}
+
+type content @model {
+  id: ID!
+  contentBankID: ID!
+  contentType : String!
+  contentsubType: String!
+  contentName: String!
+  subTopic: String!
+  topic: String!
+  subject: String!
+  content: String!
+  averageReadTime: String!
+  groups: [String]!
+  additionalInformation: String!
+  adminID: ID!
+  userID: ID!
+}
+
+type variableQuestion {
+  expression: String! 
+  sets: Int!
+  variablesCount: Int!
+  questionExp: String!
+  decimal: String!
+}
+
+type competency {
+  progSub: String!
+  progTopic: String!
+  progLevel: String! 
+}
+
+type myTable2 @model {
+  id: ID!
+  title: String!
+  gender: String!
+  address: String!
+  age: Int!
+}
+
+type course @model {
+  id: ID!
+  title: String!
+  price: String!
+  about: String!
+  file: String!
+  user_id: ID!
+  adminID: ID!
+  courseCode: String!
+  validity: Validity!
+  description: String!
+  leaderBoard: String!
+  status: Int!
+}
+
+
+type Validity {
+  fromTime: String!
+  toTime: String!
+}
+
+type topic @model {
+  id: ID!
+  name: String!
+  status: Int!
+  userID: ID!
+  adminID: ID!
+}
+
+type subTopic @model {
+  id: ID!
+  topicID: ID!
+  name: String!
+  subject: String!
+  status: Int!
+  userID: ID!
+}
+
+type group @model {
+  id: ID!
+  name: String!
+}
+
+type themes @model {
+  id: ID!
+  name: String!
+}
+
+type InternalKeywords @model {
+  id: ID!
+  name: String!
+}
+
+type ExternalKeywords @model {
+  id: ID!
+  name: String!
+}
+
+type Language @model {
+  id: ID!
+  name: String!
+}
+
+type batch @model {
+  id: ID!
+  name: String!
+}
+
+type specialization @model {
+  id: ID!
+  name: String!
+}
+
+type department @model {
+  id: ID!
+  name: String!
+}
+
+type techStack @model {
+  id: ID!
+  name: String!
+}
+
+type instanceSize @model {
+  id: ID!
+  name: String!
+}
+
+type programmerSubject @model {
+  id: ID!
+  name: String!
+}
+
+type programmerTopic @model {
+  id: ID!
+  name: String!
+}
+
+type programmerLevel @model {
+  id: ID!
+  name: String!
+}
+
+type blog @model {
+  id: ID!
+  catergory: [ID]
+  title: String!
+  description: String!
+  status: Int!
+  userID: ID!
+  adminID: ID!
+  hodID: ID!
+  tutorID: ID!
+}
+
+type user @model{
+  id: ID!
+  email: String!
+  password: String!
+  MobNumber: String!
+  username: String!
+  role: String!
+  status: Int!
+  permissions: Permissions
+  adminID: ID!
+  type: String
+  uploadType: String
+  Groups: [String]
+  userID: ID
+  organisation: String
+  hodID: ID
+  tutorID: ID
+  Batch: String
+  department: [ID]
+  specialization: String
+  course: [ID]
+  resume: String
+  address: String
+}
+
+type Permissions {
+  Jobs: PermissionDetails! 
+  Courses: PermissionDetails!
+  Exams: PermissionDetails!
+  Results: PermissionDetails!
+  QuestionBank: PermissionDetails!
+  Questions: PermissionDetails!
+  ContentBank: PermissionDetails!
+  Content: PermissionDetails!
+  Groups: PermissionDetails!
+  Tests: PermissionDetails!
+  Drives: PermissionDetails!
+  Student: PermissionDetails!
+  Reports: PermissionDetails!
+  StudentApprove: PermissionDetails!
+  StudentReject: PermissionDetails!
+  Tutor: PermissionDetails!
+  Attendance: PermissionDetails!
+  LeaderBoard: PermissionDetails!
+}
+
+type PermissionDetails{
+  showInMenu: String!, 
+  create: String!, 
+  edit: String!, 
+  view: String!, 
+  publisher: String!, 
+  proctorAdmin: String!, 
+  evaluator: String!, 
+  download: String!, 
+  allow: String!, 
+  notallow: String!
+}
+
